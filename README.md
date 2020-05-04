@@ -1,2 +1,2 @@
 # Project-Euler
-I've posted the Puroject Euler problems I've solved.
+I've posted the Project Euler problems I've solved.
