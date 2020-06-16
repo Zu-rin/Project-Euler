@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 #include <queue>
+#include <cmath>
 #include <algorithm>
 #define rep(i, n) for(i = 0; i < (n); i++)
 #define chmax(x, y) x = max(x, y)
@@ -17,14 +18,19 @@ typedef pair<int, int> pp;
 
 int main(void) {
 	int num, i = 0;
-	ll n = 1, l = 1000000000000000ll, ans = 0;
+	ll ans = 0;
+	double l, r, a, buf;
+	l = log2(123.0);
+	r = log2(124.0);
+	a = log2(10.0);
 	while (i < 678910) {
-		ans++;
-		n <<= 1;
-		if (to_string(n).substr(0, 3) == "123")
+		l += a;
+		r += a;
+		if (ceil(l) == floor(r))
 			i++;
-		if (n > l)
-			n /= 10;
+		l = modf(l, &buf);
+		r = modf(r, &buf);
+		ans += buf;
 	}
 	cout << ans << "\n";
 	return 0;
